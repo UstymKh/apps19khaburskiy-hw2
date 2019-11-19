@@ -74,7 +74,7 @@ public class ImmutableArrayListTest {
     }
 
     @Test(expected = IndexOutOfBoundsException.class)
-    public void testaddIndexError() {
+    public void testAddIndexError() {
         ImmutableArrayList testImmutableArrayList = new ImmutableArrayList();
         testImmutableArrayList.add(3, 1);
     }
