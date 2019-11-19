@@ -179,4 +179,70 @@ public class ImmutableLinkedListTest {
         ImmutableLinkedList testImmutableArrayList = new ImmutableLinkedList();
         testImmutableArrayList.addAll(3, new Object[]{4, 5});
     }
+
+    @Test
+    public void testAddFirst() {
+        Object[] expectedResult;
+        Object[] realResult;
+        ImmutableLinkedList testImmutableArrayList = new ImmutableLinkedList();
+        testImmutableArrayList = testImmutableArrayList.add(new Object[]{5, 3});
+        expectedResult = new Object[]{4, 5, 3};
+        realResult = testImmutableArrayList.addFirst(4).toArray();
+        assertArrayEquals(expectedResult, realResult);
+    }
+
+    @Test
+    public void testAddLast() {
+        Object[] expectedResult;
+        Object[] realResult;
+        ImmutableLinkedList testImmutableArrayList = new ImmutableLinkedList();
+        testImmutableArrayList = testImmutableArrayList.add(new Object[]{5, 3});
+        expectedResult = new Object[]{5, 3, 4};
+        realResult = testImmutableArrayList.addLast(4).toArray();
+        assertArrayEquals(expectedResult, realResult);
+    }
+
+    @Test
+    public void testGetFirst() {
+        Object expectedResult;
+        Object realResult;
+        ImmutableLinkedList testImmutableArrayList = new ImmutableLinkedList();
+        testImmutableArrayList = testImmutableArrayList.add(new Object[]{5, 3});
+        expectedResult = 5;
+        realResult = testImmutableArrayList.getFirst();
+        assertEquals(expectedResult, realResult);
+    }
+
+    @Test
+    public void testGetLast() {
+        Object expectedResult;
+        Object realResult;
+        ImmutableLinkedList testImmutableArrayList = new ImmutableLinkedList();
+        testImmutableArrayList = testImmutableArrayList.add(new Object[]{5, 3});
+        expectedResult = 3;
+        realResult = testImmutableArrayList.getLast();
+        assertEquals(expectedResult, realResult);
+    }
+
+    @Test
+    public void testRemoveFirst() {
+        Object[] expectedResult;
+        Object[] realResult;
+        ImmutableLinkedList testImmutableArrayList = new ImmutableLinkedList();
+        testImmutableArrayList = testImmutableArrayList.add(new Object[]{5, 3});
+        expectedResult = new Object[]{3};
+        realResult = testImmutableArrayList.removeFirst().toArray();
+        assertArrayEquals(expectedResult, realResult);
+    }
+
+    @Test
+    public void testRemoveLast() {
+        Object[] expectedResult;
+        Object[] realResult;
+        ImmutableLinkedList testImmutableArrayList = new ImmutableLinkedList();
+        testImmutableArrayList = testImmutableArrayList.add(new Object[]{5, 3});
+        expectedResult = new Object[]{5};
+        realResult = testImmutableArrayList.removeLast().toArray();
+        assertArrayEquals(expectedResult, realResult);
+    }
 }
